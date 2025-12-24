@@ -1,4 +1,4 @@
-# ♟️ Xadrez em Godot
+# ♟️ Xadrez em Godot ♟️
 
 [![Godot v4.x](https://img.shields.io/badge/Godot_Engine-v4.x-478cbf?logo=godot-engine&logoColor=white)](https://godotengine.org)
 [![GDScript](https://img.shields.io/badge/GDScript-100%25-478cbf?logo=gdscript)](https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html)
