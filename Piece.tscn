@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://df5w8c0w22v1n"]
+
+[ext_resource type="Script" path="res://Piece.gd" id="1_c25k0"]
+
+[node name="Piece" type="Node2D"]
+script = ExtResource("1_c25k0")
+
+[node name="CheckBorder" type="Line2D" parent="."]
+visible = false
+z_index = 1
+width = 4.0
+default_color = Color(1, 0, 0, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
