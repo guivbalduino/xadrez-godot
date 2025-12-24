@@ -4,28 +4,34 @@
 [![GDScript](https://img.shields.io/badge/GDScript-100%25-478cbf?logo=gdscript)](https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Um jogo de xadrez funcional desenvolvido do zero usando a Godot Engine v4.x. Este projeto foi criado como um exercício de desenvolvimento de jogos, cobrindo a lógica de movimentação de peças, regras de xadrez e uma interface de usuário interativa.
+Um projeto de xadrez desenvolvido com a Godot Engine v4.x. Este repositório serve como base para a criação de um jogo de xadrez completo, começando com a configuração inicial do tabuleiro e das peças.
 
 ---
 
-## 🌟 Funcionalidades Implementadas
+## 🌟 Funcionalidades Atuais
 
-### Lógica de Jogo
-- **Movimentação Completa:** Todas as peças (Peão, Torre, Cavalo, Bispo, Rainha, Rei) se movem de acordo com as regras oficiais do xadrez.
-- **Lógica de Captura:** Captura de peças inimigas.
-- **Validação de Movimentos:** Um sistema robusto que impede movimentos ilegais.
-- **Detecção de Xeque (Check):** O jogo identifica quando um rei está sob ataque.
-- **Prevenção de Movimentos Ilegais em Xeque:** Impede que o jogador faça qualquer movimento que deixe seu próprio rei em xeque (peças cravadas, movimento do rei para uma casa atacada, etc.).
-- **Detecção de Xeque-Mate (Checkmate):** O jogo detecta e anuncia o fim da partida quando um jogador não tem movimentos legais para escapar de um xeque.
+O projeto atualmente implementa a base visual e estrutural do jogo:
 
-### Interface de Usuário (UI) e Experiência do Jogador (UX)
-- **Tabuleiro e Peças Visuais:** Utiliza sprites para o tabuleiro e para todas as peças, com visuais distintos para as cores preta e branca.
-- **Seleção e Feedback:** Destaque visual (aumento de escala) para a peça selecionada.
-- **Exibição de Movimentos Possíveis:** Ao selecionar uma peça, o jogo destaca todas as casas para as quais ela pode se mover legalmente.
-- **Feedback de Xeque:**
-    - Uma borda vermelha aparece ao redor do rei que está em xeque.
-    - Um texto "XEQUE!" animado aparece no centro da tela.
-- **Indicador de Turno:** Uma barra na parte inferior da tela muda de cor para indicar qual jogador deve mover.
+- **Geração Procedural do Tabuleiro:** O tabuleiro de 8x8 é gerado dinamicamente, com `Sprite2D` para cada casa, aplicando as texturas de casas claras and escuras.
+- **Setup Inicial das Peças:** As peças são instanciadas e posicionadas em suas casas iniciais de acordo com as regras do xadrez.
+- **Estrutura de Peças:** Cada peça é um objeto (`Piece`) com tipo, cor, e posição definidos, e seu visual é carregado de arquivos de imagem correspondentes.
+
+## 🎯 Objetivos Futuros (TODO)
+
+A lista de funcionalidades a serem implementadas para tornar o jogo funcional inclui:
+
+- **Lógica de Movimentação de Peças:**
+    - Implementar a movimentação de todas as peças (Peão, Torre, Cavalo, Bispo, Rainha, Rei) de acordo com suas regras.
+- **Regras do Xadrez:**
+    - Lógica de captura de peças.
+    - Validação de movimentos para impedir jogadas ilegais.
+    - Detecção de Xeque (Check) e Xeque-Mate (Checkmate).
+    - Prevenção de movimentos que deixem o próprio rei em xeque.
+- **Interface e Experiência do Jogador:**
+    - Sistema de seleção de peças e feedback visual.
+    - Exibição dos movimentos possíveis para a peça selecionada.
+    - Indicador de turno (vez das brancas ou pretas).
+    - Interface para exibir mensagens (ex: "Xeque!").
 
 ## 🚀 Como Executar
 
@@ -40,9 +46,9 @@ Um jogo de xadrez funcional desenvolvido do zero usando a Godot Engine v4.x. Est
 
 O projeto é estruturado em torno de algumas cenas e scripts principais:
 
-- **`Game.tscn` / `Game.gd`:** A cena principal e o script que orquestra todo o jogo. Ele gerencia o estado do tabuleiro (`board_state`), o turno atual, a lógica de seleção e movimento, e as regras de xeque e xeque-mate.
-- **`Board.gd`:** Um script simples anexado a um `Node2D` que gera proceduralmente o tabuleiro visual usando os sprites de tiles.
-- **`Piece.tscn` / `Piece.gd`:** Uma cena base para todas as peças. O script `Piece.gd` (com `class_name Piece`) define as propriedades de uma peça (tipo, cor) e gerencia seu visual, incluindo a textura do sprite e o destaque de xeque.
+- **`Game.tscn` / `Game.gd`:** A cena principal e o script que orquestra o jogo. Atualmente, é responsável por instanciar o tabuleiro e as peças em suas posições iniciais.
+- **`Board.gd`:** Um script anexado a um `Node2D` que gera proceduralmente o tabuleiro visual usando os sprites de tiles.
+- **`Piece.tscn` / `Piece.gd`:** Uma cena base para todas as peças. O script `Piece.gd` (com `class_name Piece`) define as propriedades de uma peça (tipo, cor) e gerencia seu visual.
 
 ## 🎨 Atribuição de Assets
 
